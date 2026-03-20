@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Telecommunications Industry Intelligence | March 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--accent:#22d3ee;--green:#10b981;--red:#ef4444;--amber:#f59e0b;--purple:#a78bfa;--pink:#ec4899;--text:#e2e8f0;--muted:#94a3b8;--dim:#64748b}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+.header{border-bottom:1px solid var(--border);padding:20px 28px 0;background:linear-gradient(180deg,var(--card),var(--bg))}
+.header h1{font-size:22px;font-weight:700;font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+.header h1::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+.header .sub{color:var(--dim);font-size:12px;margin-top:4px}
+.badge{padding:5px 12px;border-radius:6px;background:rgba(16,185,129,.15);color:var(--green);font-size:11px;font-weight:600}
+.header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+
+.tabs{display:flex;gap:2px;overflow-x:auto}
+.tab{padding:10px 18px;border:none;border-bottom:2px solid transparent;background:transparent;color:var(--dim);font-size:12.5px;font-weight:600;cursor:pointer;border-radius:6px 6px 0 0;transition:all .15s;font-family:'Space Grotesk',sans-serif;white-space:nowrap}
+.tab.active{border-bottom-color:var(--accent);background:rgba(34,211,238,.06);color:var(--accent)}
+.tab:hover:not(.active){color:var(--muted)}
+
+.content{padding:24px 28px}
+.tab-panel{display:none}.tab-panel.active{display:block}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px}
+.kpi-label{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;font-family:'JetBrains Mono',monospace}
+.kpi-value{font-size:26px;font-weight:700;line-height:1.1;font-family:'Space Grotesk',sans-serif}
+.kpi-footer{display:flex;align-items:center;gap:6px;margin-top:6px}
+.kpi-trend{font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px}
+.kpi-trend.up{color:var(--green);background:rgba(16,185,129,.15)}
+.kpi-trend.down{color:var(--red);background:rgba(239,68,68,.15)}
+.kpi-sub{color:var(--dim);font-size:11px}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.grid-32{display:grid;grid-template-columns:3fr 2fr;gap:20px}
+.grid-23{display:grid;grid-template-columns:2fr 3fr;gap:20px}
+@media(max-width:900px){.grid-2,.grid-3,.grid-32,.grid-23{grid-template-columns:1fr}}
+
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.chart-card h2{color:var(--text);font-size:18px;font-weight:700;margin:0;font-family:'Space Grotesk',sans-serif}
+.chart-card .chart-sub{color:var(--dim);font-size:12.5px;margin:4px 0 16px;line-height:1.5}
+.chart-wrap{position:relative;width:100%;height:280px}
+
+.insight{border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.insight-title{font-size:13px;font-weight:700;font-family:'Space Grotesk',sans-serif;margin-bottom:6px}
+.insight p{color:var(--muted);font-size:12.5px;line-height:1.6;margin:0}
+
+.item-card{border-radius:8px;padding:10px 14px;margin-bottom:8px}
+.item-label{font-size:12.5px;font-weight:600}
+.item-detail{color:var(--dim);font-size:11px;margin-top:3px}
+
+.opp-item{display:flex;gap:14px;border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.opp-rank{min-width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;font-family:'Space Grotesk',sans-serif}
+.opp-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.opp-title{color:var(--text);font-weight:700;font-size:13px}
+.opp-badge{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:600}
+.opp-time{font-size:10px;color:var(--dim)}
+.opp-detail{color:var(--dim);font-size:11.5px;margin:5px 0 0;line-height:1.55}
+
+.bead-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px}
+.bead-item{text-align:center}
+.bead-ring{position:relative;width:120px;height:120px;margin:0 auto 10px}
+.bead-ring svg{transform:rotate(-90deg)}
+.bead-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.bead-val{color:var(--text);font-size:22px;font-weight:700;font-family:'Space Grotesk',sans-serif}
+.bead-of{color:var(--dim);font-size:10px}
+.bead-name{color:var(--muted);font-size:12px}
+.bead-note{color:var(--dim);font-size:12px;text-align:center;margin-top:12px;line-height:1.6}
+
+.footer{padding:16px 28px;border-top:1px solid var(--border);text-align:center}
+.footer p{color:var(--dim);font-size:11px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>US Telecommunications Industry</h1>
+      <div class="sub">Comprehensive market intelligence -- March 2026 | Sources: WIA By The Numbers 2025, Deloitte TMT Outlook, Mordor Intelligence, NTIA, Wireless Estimator, Light Reading</div>
+    </div>
+    <div class="badge">RESEARCH REPORT</div>
+  </div>
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="overview">Market Overview</button>
+    <button class="tab" data-tab="capex">CapEx &amp; Investment</button>
+    <button class="tab" data-tab="infra">Infrastructure</button>
+    <button class="tab" data-tab="workforce">Workforce</button>
+    <button class="tab" data-tab="opportunities">Opportunities</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ========== OVERVIEW ========== -->
+<div class="tab-panel active" id="panel-overview">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Market Size (2025)</div><div class="kpi-value" style="color:var(--accent)">$451.7B</div><div class="kpi-footer"><span class="kpi-trend up">+2.7%</span><span class="kpi-sub">US Telecom Services</span></div></div>
+    <div class="kpi"><div class="kpi-label">Global Revenue</div><div class="kpi-value" style="color:var(--accent)">$1.55T</div><div class="kpi-footer"><span class="kpi-trend up">+1.7%</span><span class="kpi-sub">~1.7% YoY Growth</span></div></div>
+    <div class="kpi"><div class="kpi-label">Infra Investment</div><div class="kpi-value" style="color:var(--green)">$65B</div><div class="kpi-footer"><span class="kpi-trend up">+3.2%</span><span class="kpi-sub">Wireless sector 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">5G Subs (US)</div><div class="kpi-value" style="color:var(--purple)">200M+</div><div class="kpi-footer"><span class="kpi-trend up">+28%</span><span class="kpi-sub">Exceeded projections</span></div></div>
+    <div class="kpi"><div class="kpi-label">FWA Households</div><div class="kpi-value" style="color:var(--amber)">14M+</div><div class="kpi-footer"><span class="kpi-trend up">+15%</span><span class="kpi-sub">Fixed wireless access</span></div></div>
+    <div class="kpi"><div class="kpi-label">BEAD Funding</div><div class="kpi-value" style="color:var(--pink)">$42.45B</div><div class="kpi-footer"><span class="kpi-sub">29 states signed</span></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card"><h2>Revenue Trajectory ($B)</h2><div class="chart-sub">US Telecom Services projected to $601B by 2030 (5.88% CAGR)</div><div class="chart-wrap"><canvas id="chartRevenue"></canvas></div></div>
+    <div class="chart-card"><h2>Revenue by Segment (2024 %)</h2><div class="chart-sub">Mobile data dominates at ~40%; IoT/M2M is fastest-growing</div><div class="chart-wrap"><canvas id="chartSegments"></canvas></div></div>
+  </div>
+  <div class="grid-3" style="margin-top:20px">
+    <div class="insight" style="background:linear-gradient(135deg,rgba(16,185,129,.05),transparent);border:1px solid rgba(16,185,129,.2)"><div class="insight-title" style="color:var(--green)">&#9670; EBITDA Margins Stable</div><p>Global telecom EBITDA margins hold at ~35%. Capital intensity moderating from 17-18% (2022-23) to ~15.9% (2024), signaling a shift from build-phase to monetization.</p></div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(245,158,11,.05),transparent);border:1px solid rgba(245,158,11,.2)"><div class="insight-title" style="color:var(--amber)">&#9888; Pricing Pressure Persists</div><p>ARPU remains largely stagnant across mature markets. Only a minority of operators report meaningful growth, underscoring fragile mobile monetization.</p></div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(167,139,250,.05),transparent);border:1px solid rgba(167,139,250,.2)"><div class="insight-title" style="color:var(--purple)">&#10148; Convergence Accelerating</div><p>Competitive boundaries between carriers, cable, hyperscalers, and satellite firms continue blurring as companies race to bundle wireline, wireless, and edge-cloud.</p></div>
+  </div>
+</div>
+
+<!-- ========== CAPEX ========== -->
+<div class="tab-panel" id="panel-capex">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Total US Telco CapEx</div><div class="kpi-value" style="color:var(--red)">$80.5B</div><div class="kpi-footer"><span class="kpi-trend down">-5.2%</span><span class="kpi-sub">Full industry 2024</span></div></div>
+    <div class="kpi"><div class="kpi-label">Wireless CapEx</div><div class="kpi-value" style="color:var(--red)">$32.4B</div><div class="kpi-footer"><span class="kpi-trend down">-26%</span><span class="kpi-sub">MNOs only, 2024</span></div></div>
+    <div class="kpi"><div class="kpi-label">Capital Intensity</div><div class="kpi-value" style="color:var(--amber)">15.9%</div><div class="kpi-footer"><span class="kpi-trend down">-2.0%</span><span class="kpi-sub">Down from 17-18% peak</span></div></div>
+    <div class="kpi"><div class="kpi-label">Peak CapEx Year</div><div class="kpi-value" style="color:var(--dim)">2022</div><div class="kpi-footer"><span class="kpi-sub">$56.9B wireless MNOs</span></div></div>
+  </div>
+  <div class="grid-32">
+    <div class="chart-card"><h2>Big 3 Carrier CapEx ($B)</h2><div class="chart-sub">Peaked in 2022 with C-band rollout; entering 'business-as-usual' phase</div><div class="chart-wrap"><canvas id="chartCapex"></canvas></div></div>
+    <div class="chart-card"><h2>Capital Intensity Ratio (%)</h2><div class="chart-sub">Declining ratio signals shift from build-phase to monetization</div><div class="chart-wrap"><canvas id="chartIntensity"></canvas></div></div>
+  </div>
+  <div class="grid-2" style="margin-top:20px">
+    <div class="insight" style="background:linear-gradient(135deg,rgba(245,158,11,.05),transparent);border:1px solid rgba(245,158,11,.2)"><div class="insight-title" style="color:var(--amber)">&#9888; Post-Peak Trough</div><p>Wireless MNO CapEx fell 26% from $43.5B (2023) to $32.4B (2024) after the C-band peak of $56.9B in 2022. Guidance suggests 2024 was the trough; modest recovery expected.</p></div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(167,139,250,.05),transparent);border:1px solid rgba(167,139,250,.2)"><div class="insight-title" style="color:var(--purple)">&#10148; AI Giants Outpacing Telcos</div><p>As telcos conserve capital, data center and AI companies attract massive investment. Telcos pivot to AI-driven operational efficiency rather than competing on raw infrastructure spend.</p></div>
+  </div>
+</div>
+
+<!-- ========== INFRASTRUCTURE ========== -->
+<div class="tab-panel" id="panel-infra">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Cell Towers</div><div class="kpi-value" style="color:var(--accent)">158,500</div><div class="kpi-footer"><span class="kpi-trend up">+2.4%</span><span class="kpi-sub">Purpose-built 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">Macrocell Sites</div><div class="kpi-value" style="color:var(--green)">254,850</div><div class="kpi-footer"><span class="kpi-trend up">+2.7%</span><span class="kpi-sub">Excl. small cells</span></div></div>
+    <div class="kpi"><div class="kpi-label">Outdoor Small Cells</div><div class="kpi-value" style="color:var(--amber)">198,100</div><div class="kpi-footer"><span class="kpi-trend down">-0.1%</span><span class="kpi-sub">Slight decline from 2024</span></div></div>
+    <div class="kpi"><div class="kpi-label">Indoor Small Cells</div><div class="kpi-value" style="color:var(--purple)">830,350</div><div class="kpi-footer"><span class="kpi-trend up">+3.5%</span><span class="kpi-sub">DAS, CBRS, mmWave</span></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card"><h2>US Wireless Infrastructure Growth</h2><div class="chart-sub">Steady tower growth; macrocells increasingly on existing structures</div><div class="chart-wrap"><canvas id="chartInfra"></canvas></div></div>
+    <div class="chart-card"><h2>Small Cell 5G Market ($B)</h2><div class="chart-sub">Projected from $5.5B (2024) to $38.5B (2030) at ~38% CAGR</div><div class="chart-wrap"><canvas id="chartSmallCell"></canvas></div></div>
+  </div>
+  <div class="chart-card" style="margin-top:20px">
+    <h2>BEAD Program Progress</h2><div class="chart-sub">As of March 13, 2026 -- 29 of 56 states/territories have signed award agreements</div>
+    <div class="bead-row">
+      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#22d3ee" stroke-width="8" stroke-dasharray="297 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">53</span><span class="bead-of">of 56</span></div></div><div class="bead-name">Proposals Approved</div></div>
+      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#10b981" stroke-width="8" stroke-dasharray="213 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">38</span><span class="bead-of">of 56</span></div></div><div class="bead-name">NIST Approved</div></div>
+      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#f59e0b" stroke-width="8" stroke-dasharray="163 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">29</span><span class="bead-of">of 56</span></div></div><div class="bead-name">Awards Signed</div></div>
+    </div>
+    <div class="bead-note">T-Mobile CTO proposes 6,000 new macro sites to extend 5G to 99% of Americans (~$8B). First BEAD-funded projects expected to break ground by Summer 2026.</div>
+  </div>
+</div>
+
+<!-- ========== WORKFORCE ========== -->
+<div class="tab-panel" id="panel-workforce">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Wireless Workforce</div><div class="kpi-value" style="color:var(--red)">342,350</div><div class="kpi-footer"><span class="kpi-trend down">-7.2%</span><span class="kpi-sub">FTEs, 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">Jobs Lost (1 Year)</div><div class="kpi-value" style="color:var(--red)">-26,400</div><div class="kpi-footer"><span class="kpi-sub">2024 to 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">Tower Hiring</div><div class="kpi-value" style="color:var(--red)">20yr Low</div><div class="kpi-footer"><span class="kpi-sub">Q4 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">Fixed Broadband Workers</div><div class="kpi-value" style="color:var(--green)">477,700</div><div class="kpi-footer"><span class="kpi-sub">GAO estimate; facing shortage</span></div></div>
+    <div class="kpi"><div class="kpi-label">Projected Shortfall</div><div class="kpi-value" style="color:var(--amber)">178,000</div><div class="kpi-footer"><span class="kpi-sub">By 2032 (FBA/PCCA study)</span></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card"><h2>Wireless Infrastructure Workforce (WIA, thousands)</h2><div class="chart-sub">WIA By The Numbers: verified annual FTE counts. No comparable year-over-year series exists for fiber/broadband construction -- GAO reports ~477,700 fixed broadband workers, with an industry-projected shortfall of 178,000 by 2032 (FBA/PCCA).</div><div class="chart-wrap"><canvas id="chartWorkforce"></canvas></div></div>
+    <div class="chart-card">
+      <h2>Key Contractor Dynamics</h2><div class="chart-sub">Pricing pressure, payment battles, and structural reform</div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">AT&T: Turf model elimination by June 2026</div><div class="item-detail">Single-tier sub structure, 30-day pay terms, 50% NWSA certs required</div></div>
+      <div class="item-card" style="background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15)"><div class="item-label" style="color:var(--red)">Verizon: Net-90 payment whiplash</div><div class="item-detail">Promised 30-day terms to FCC, then reverted to 90-day via operational notice</div></div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">T-Mobile: Parallel framework</div><div class="item-detail">Aligned with NATE on similar reform commitments; 6,000 new macro sites proposed</div></div>
+      <div class="item-card" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.15)"><div class="item-label" style="color:var(--amber)">Industry: Matrix pricing flat since ~2020</div><div class="item-detail">VZ rolled 3-4% increase across 47 line items; ~3% effective -- not enough to offset inflation</div></div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">Fiber/Broadband: ~477.7K workers (GAO); 58K new needed by 2032</div><div class="item-detail">Entry-level fiber: ~$60K w/ OT (WSJ). Drill operators: $28-45/hr. 178K total shortfall projected incl. retirements (FBA/PCCA study).</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== OPPORTUNITIES ========== -->
+<div class="tab-panel" id="panel-opportunities">
+  <div class="grid-23">
+    <div class="chart-card"><h2>Opportunity Radar</h2><div class="chart-sub">Current vs. projected intensity across growth vectors</div><div class="chart-wrap"><canvas id="chartRadar"></canvas></div></div>
+    <div class="chart-card">
+      <h2>Growth Avenues -- Ranked by Potential</h2>
+      <div class="opp-item" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.12)"><div class="opp-rank" style="background:rgba(34,211,238,.15);color:var(--accent)">1</div><div><div class="opp-header"><span class="opp-title">Small Cell Densification</span><span class="opp-badge" style="background:rgba(34,211,238,.15);color:var(--accent)">CAGR: 25-38%</span><span class="opp-time">Now-2034</span></div><p class="opp-detail">US outdoor small cells ~198K; CTIA projected 800K+ needed. 5G densification is the primary growth engine. Indoor DAS and CBRS private networks expanding steadily across enterprise.</p></div></div>
+      <div class="opp-item" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.12)"><div class="opp-rank" style="background:rgba(16,185,129,.15);color:var(--green)">2</div><div><div class="opp-header"><span class="opp-title">Fiber & BEAD Deployment</span><span class="opp-badge" style="background:rgba(16,185,129,.15);color:var(--green)">CAGR: 6-7%</span><span class="opp-time">2026-2030</span></div><p class="opp-detail">BEAD's $42.45B is the largest broadband deployment ever. $21B in savings redirected. First shovels Summer 2026. Massive demand for fiber splicers, drillers, linemen.</p></div></div>
+      <div class="opp-item" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.12)"><div class="opp-rank" style="background:rgba(167,139,250,.15);color:var(--purple)">3</div><div><div class="opp-header"><span class="opp-title">AI/Edge Infrastructure</span><span class="opp-badge" style="background:rgba(167,139,250,.15);color:var(--purple)">CAGR: New</span><span class="opp-time">2025-2030+</span></div><p class="opp-detail">Tower sites becoming AI infrastructure via edge compute. Requires power upgrades, fiber terminations, shelter mods. New skill sets for contractors.</p></div></div>
+      <div class="opp-item" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.12)"><div class="opp-rank" style="background:rgba(245,158,11,.15);color:var(--amber)">4</div><div><div class="opp-header"><span class="opp-title">Private 5G / Enterprise</span><span class="opp-badge" style="background:rgba(245,158,11,.15);color:var(--amber)">CAGR: 20%+</span><span class="opp-time">Now-2030</span></div><p class="opp-detail">52% of small cells already in enterprise. CBRS-based private networks in factories, hospitals, ports. T-Mobile public safety slices: $200M/yr.</p></div></div>
+      <div class="opp-item" style="background:rgba(236,72,153,.04);border:1px solid rgba(236,72,153,.12)"><div class="opp-rank" style="background:rgba(236,72,153,.15);color:var(--pink)">5</div><div><div class="opp-header"><span class="opp-title">Fixed Wireless Access (FWA)</span><span class="opp-badge" style="background:rgba(236,72,153,.15);color:var(--pink)">CAGR: 15-20%</span><span class="opp-time">Now-2027</span></div><p class="opp-detail">14M+ households connected. Legitimate broadband alternative in areas without fiber. Drives ongoing tower upgrades and new site activity.</p></div></div>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:20px">
+    <div class="insight" style="background:linear-gradient(135deg,rgba(34,211,238,.05),transparent);border:1px solid rgba(34,211,238,.2)"><div class="insight-title" style="color:var(--accent)">&#9670; Estimating & Preconstruction</div><p>As build complexity grows (BEAD compliance, BABA, multi-tech deployments), demand for skilled estimators who understand telecom construction is rising. Preconstruction roles bridge field knowledge and project economics.</p></div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(167,139,250,.05),transparent);border:1px solid rgba(167,139,250,.2)"><div class="insight-title" style="color:var(--purple)">&#9888; Data Center / AI Adjacency</div><p>Telcos finding indirect AI revenue: selling fiber to data centers, leasing tower sites for edge compute, building private networks for AI facilities. New market entry points.</p></div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(16,185,129,.05),transparent);border:1px solid rgba(16,185,129,.2)"><div class="insight-title" style="color:var(--green)">&#10148; Contractor Consolidation</div><p>NATE/carrier agreements reshaping contracting. Turf model elimination and 1099 crew restrictions favor larger, certified firms. Creates acquisition opportunities and competitive moats.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer"><p>TCE Telecom Intelligence | Data compiled March 2026 | Sources: WIA By The Numbers 2025, Deloitte TMT Outlook 2026, Mordor Intelligence, NTIA BEAD Dashboard, Wireless Estimator, Light Reading, Inside Towers</p></div>
+
+<script>
+// TAB SWITCHING
+document.querySelectorAll('.tab').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    initCharts(btn.dataset.tab);
+  });
+});
+
+// CHART.JS DEFAULTS
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.borderColor = '#1e293b';
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.plugins.legend.labels.boxWidth = 12;
+Chart.defaults.plugins.legend.labels.padding = 16;
+Chart.defaults.plugins.tooltip.backgroundColor = '#1a2233';
+Chart.defaults.plugins.tooltip.borderColor = '#1e293b';
+Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.cornerRadius = 8;
+Chart.defaults.plugins.tooltip.padding = 10;
+Chart.defaults.plugins.tooltip.titleFont = { family: "'JetBrains Mono', monospace", size: 11 };
+Chart.defaults.plugins.tooltip.bodyFont = { size: 12 };
+Chart.defaults.elements.bar.borderRadius = 3;
+
+var charts = {};
+
+function initCharts(tab) {
+  if (tab === 'overview') {
+    if (!charts.revenue) {
+      charts.revenue = new Chart(document.getElementById('chartRevenue'), {
+        type: 'line',
+        data: {
+          labels: ['2020','2021','2022','2023','2024','2025','2026F','2027F','2028F','2029F','2030F'],
+          datasets: [{ label: 'Revenue ($B)', data: [380,395,410,425,440,452,472,498,528,562,601], borderColor: '#22d3ee', backgroundColor: 'rgba(34,211,238,.12)', fill: true, tension: 0.3, pointRadius: 4, pointBackgroundColor: '#22d3ee', borderWidth: 2.5 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 350, max: 650, grid: { color: '#1e293b' } }, x: { grid: { color: '#1e293b' } } } }
+      });
+    }
+    if (!charts.segments) {
+      charts.segments = new Chart(document.getElementById('chartSegments'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Mobile Data','Fixed Internet','Mobile Voice','Fixed Voice','Pay TV','IoT/M2M'],
+          datasets: [{ data: [39.5,22.3,12.8,5.2,11.4,8.8], backgroundColor: ['#22d3ee','#10b981','#f59e0b','#a78bfa','#ec4899','#ef4444'], borderColor: '#111827', borderWidth: 2 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { padding: 12, font: { size: 11 } } } }, cutout: '50%' }
+      });
+    }
+  }
+  if (tab === 'capex') {
+    if (!charts.capex) {
+      charts.capex = new Chart(document.getElementById('chartCapex'), {
+        type: 'bar',
+        data: {
+          labels: ['2020','2021','2022','2023','2024','2025E'],
+          datasets: [
+            { label: 'AT&T', data: [15.7,16.5,24.5,24.0,22.0,22.0], backgroundColor: '#22d3ee' },
+            { label: 'Verizon', data: [18.2,20.3,23.1,18.8,17.0,17.5], backgroundColor: '#10b981' },
+            { label: 'T-Mobile', data: [11.0,12.3,9.8,9.5,8.9,9.0], backgroundColor: '#a78bfa' }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, grid: { color: '#1e293b' } }, x: { grid: { color: '#1e293b' } } } }
+      });
+    }
+    if (!charts.intensity) {
+      charts.intensity = new Chart(document.getElementById('chartIntensity'), {
+        type: 'line',
+        data: {
+          labels: ['2020','2021','2022','2023','2024','2025E'],
+          datasets: [{ label: 'CapEx/Revenue %', data: [16.2,17.1,17.8,17.3,15.9,14.8], borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,.1)', fill: true, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#f59e0b', pointBorderColor: '#0a0e17', pointBorderWidth: 2, borderWidth: 2.5 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 13, max: 19, grid: { color: '#1e293b' } }, x: { grid: { color: '#1e293b' } } } }
+      });
+    }
+  }
+  if (tab === 'infra') {
+    if (!charts.infra) {
+      charts.infra = new Chart(document.getElementById('chartInfra'), {
+        type: 'bar',
+        data: {
+          labels: ['2020','2021','2022','2023','2024','2025'],
+          datasets: [
+            { label: 'Towers (K)', data: [130,135,142.1,148,154.8,158.5], backgroundColor: '#22d3ee' },
+            { label: 'Macrocells (K)', data: [195,200,209.5,230,248,254.9], backgroundColor: '#10b981' },
+            { label: 'Outdoor Small Cells (K)', data: [120,150,175,188,197.9,198.1], type: 'line', borderColor: '#f59e0b', backgroundColor: 'transparent', borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: '#f59e0b', tension: 0.3 }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 100, grid: { color: '#1e293b' } }, x: { grid: { color: '#1e293b' } } } }
+      });
+    }
+    if (!charts.smallcell) {
+      charts.smallcell = new Chart(document.getElementById('chartSmallCell'), {
+        type: 'line',
+        data: {
+          labels: ['2024','2025','2026F','2027F','2028F','2029F','2030F'],
+          datasets: [{ label: 'Market Size ($B)', data: [5.5,7.5,10.4,14.5,20.1,28.0,38.5], borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,.12)', fill: true, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#10b981', pointBorderColor: '#0a0e17', pointBorderWidth: 2, borderWidth: 2.5 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, grid: { color: '#1e293b' } }, x: { grid: { color: '#1e293b' } } } }
+      });
+    }
+  }
+  if (tab === 'workforce') {
+    if (!charts.workforce) {
+      charts.workforce = new Chart(document.getElementById('chartWorkforce'), {
+        type: 'bar',
+        data: {
+          labels: ['2022','2023','2024','2025'],
+          datasets: [
+            { label: 'Wireless Infra Workforce (K)', data: [395,385,368.8,342.4], backgroundColor: ['rgba(239,68,68,.55)','rgba(239,68,68,.65)','rgba(239,68,68,.75)','rgba(239,68,68,.9)'], borderColor: '#ef4444', borderWidth: 1 }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true }, annotation: {} }, scales: { y: { min: 300, max: 420, title: { display: true, text: 'Thousands (FTEs)', color: '#64748b' }, grid: { color: '#1e293b' } }, x: { grid: { color: '#1e293b' } } } }
+      });
+    }
+  }
+  if (tab === 'opportunities') {
+    if (!charts.radar) {
+      charts.radar = new Chart(document.getElementById('chartRadar'), {
+        type: 'radar',
+        data: {
+          labels: ['Small Cells','Fiber/BEAD','AI/Edge','Private 5G','FWA','Macro Towers'],
+          datasets: [
+            { label: 'Current (2025)', data: [72,65,30,40,68,55], borderColor: '#22d3ee', backgroundColor: 'rgba(34,211,238,.1)', borderWidth: 2, pointBackgroundColor: '#22d3ee', pointRadius: 3 },
+            { label: 'Future (2028-30)', data: [95,90,88,82,78,60], borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,.08)', borderWidth: 2, pointBackgroundColor: '#10b981', pointRadius: 4 }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 100, ticks: { stepSize: 25, color: '#64748b', backdropColor: 'transparent' }, grid: { color: '#1e293b' }, pointLabels: { color: '#94a3b8', font: { size: 11 } } } } }
+      });
+    }
+  }
+}
+
+// Init overview on load
+initCharts('overview');
+</script>
+</body>
+</html>
