@@ -95,6 +95,11 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Inter'
     <button class="tab" data-tab="infra">Infrastructure</button>
     <button class="tab" data-tab="workforce">Workforce</button>
     <button class="tab" data-tab="opportunities">Opportunities</button>
+    <button class="tab" data-tab="pipeline">Carrier Pipeline</button>
+    <button class="tab" data-tab="bead">BEAD Tracker</button>
+    <button class="tab" data-tab="consolidation">Consolidation</button>
+    <button class="tab" data-tab="bizdev">FCC ASR + BEAD</button>
+    <button class="tab" data-tab="targets">BizDev Targets</button>
   </div>
 </div>
 
@@ -108,7 +113,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Inter'
     <div class="kpi"><div class="kpi-label">Infra Investment</div><div class="kpi-value" style="color:var(--green)">$65B</div><div class="kpi-footer"><span class="kpi-trend up">+3.2%</span><span class="kpi-sub">Wireless sector 2025</span></div></div>
     <div class="kpi"><div class="kpi-label">5G Subs (US)</div><div class="kpi-value" style="color:var(--purple)">200M+</div><div class="kpi-footer"><span class="kpi-trend up">+28%</span><span class="kpi-sub">Exceeded projections</span></div></div>
     <div class="kpi"><div class="kpi-label">FWA Households</div><div class="kpi-value" style="color:var(--amber)">14M+</div><div class="kpi-footer"><span class="kpi-trend up">+15%</span><span class="kpi-sub">Fixed wireless access</span></div></div>
-    <div class="kpi"><div class="kpi-label">BEAD Funding</div><div class="kpi-value" style="color:var(--pink)">$42.45B</div><div class="kpi-footer"><span class="kpi-sub">29 states signed</span></div></div>
+    <div class="kpi"><div class="kpi-label">BEAD Funding</div><div class="kpi-value" style="color:var(--pink)">$42.45B</div><div class="kpi-footer"><span class="kpi-sub">38 states signed</span></div></div>
   </div>
   <div class="grid-2">
     <div class="chart-card"><h2>Revenue Trajectory ($B)</h2><div class="chart-sub">US Telecom Services projected to $601B by 2030 (5.88% CAGR)</div><div class="chart-wrap"><canvas id="chartRevenue"></canvas></div></div>
@@ -152,11 +157,11 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Inter'
     <div class="chart-card"><h2>Small Cell 5G Market ($B)</h2><div class="chart-sub">Projected from $5.5B (2024) to $38.5B (2030) at ~38% CAGR</div><div class="chart-wrap"><canvas id="chartSmallCell"></canvas></div></div>
   </div>
   <div class="chart-card" style="margin-top:20px">
-    <h2>BEAD Program Progress</h2><div class="chart-sub">As of March 13, 2026 -- 29 of 56 states/territories have signed award agreements</div>
+    <h2>BEAD Program Progress</h2><div class="chart-sub">As of April 2026 -- 38 of 56 states/territories have signed award agreements (NTIA)</div>
     <div class="bead-row">
-      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#22d3ee" stroke-width="8" stroke-dasharray="297 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">53</span><span class="bead-of">of 56</span></div></div><div class="bead-name">Proposals Approved</div></div>
-      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#10b981" stroke-width="8" stroke-dasharray="213 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">38</span><span class="bead-of">of 56</span></div></div><div class="bead-name">NIST Approved</div></div>
-      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#f59e0b" stroke-width="8" stroke-dasharray="163 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">29</span><span class="bead-of">of 56</span></div></div><div class="bead-name">Awards Signed</div></div>
+      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#22d3ee" stroke-width="8" stroke-dasharray="297 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">53</span><span class="bead-of">of 56</span></div></div><div class="bead-name">NTIA Approved</div></div>
+      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#10b981" stroke-width="8" stroke-dasharray="280 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">50</span><span class="bead-of">of 56</span></div></div><div class="bead-name">NIST Approved</div></div>
+      <div class="bead-item"><div class="bead-ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="#1e293b" stroke-width="8"/><circle cx="60" cy="60" r="50" fill="none" stroke="#f59e0b" stroke-width="8" stroke-dasharray="213 314" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div class="bead-center"><span class="bead-val">38</span><span class="bead-of">of 56</span></div></div><div class="bead-name">Awards Signed</div></div>
     </div>
     <div class="bead-note">T-Mobile CTO proposes 6,000 new macro sites to extend 5G to 99% of Americans (~$8B). First BEAD-funded projects expected to break ground by Summer 2026.</div>
   </div>
@@ -204,9 +209,407 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Inter'
   </div>
 </div>
 
+<!-- ========== CARRIER PIPELINE ========== -->
+<div class="tab-panel" id="panel-pipeline">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">AT&T 2026 CapEx</div><div class="kpi-value" style="color:var(--accent)">$23-24B</div><div class="kpi-footer"><span class="kpi-trend up">+9%</span><span class="kpi-sub">vs $22B in 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">Verizon 2026 CapEx</div><div class="kpi-value" style="color:var(--green)">$16-16.5B</div><div class="kpi-footer"><span class="kpi-trend down">-3%</span><span class="kpi-sub">Down from $17B in 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">T-Mobile 2026 CapEx</div><div class="kpi-value" style="color:var(--purple)">$10B</div><div class="kpi-footer"><span class="kpi-trend up">+11%</span><span class="kpi-sub">Up from $9B in 2025</span></div></div>
+    <div class="kpi"><div class="kpi-label">Combined 2026</div><div class="kpi-value" style="color:var(--amber)">~$50B</div><div class="kpi-footer"><span class="kpi-sub">AT&T = nearly half</span></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card">
+      <h2>2026 CapEx Comparison ($B)</h2>
+      <div class="chart-sub">AT&T spending nearly as much as Verizon and T-Mobile combined (Wireless Estimator, SEC filings)</div>
+      <div class="chart-wrap"><canvas id="chartPipeline"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2>AT&T -- Dominant Build Cycle</h2>
+      <div class="chart-sub">$250B over 5 years; largest single-carrier infrastructure commitment in US history</div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">Fiber: 60M locations by 2030 (from 32M in 2025)</div><div class="item-detail">Lumen Mass Markets fiber acquired for $5.75B (closing Q1 2026). Adding 8M fiber locations in 2026 alone. Hiring "thousands" of new technicians.</div></div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">Wireless: Open RAN modernization by end 2026/early 2027</div><div class="item-detail">"Popcorn approach" -- upgrading towers and sectors simultaneously nationwide, not geography-by-geography. Ramping quarter over quarter.</div></div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">FirstNet: $1B new investment (public safety)</div><div class="item-detail">$2B agreement with Dept. of Commerce to expand/upgrade FirstNet. $1B new AT&T money, $1B from fee reductions. Announced April 2026.</div></div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">NWSA: $75K donation for Foreman Cert exams</div><div class="item-detail">Covering first-time NWSA Foreman Cert exam fees for all TTT-2 certified technicians. First-come, first-served.</div></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="chart-card">
+      <h2>Verizon -- Frontier Integration + Fiber Scale</h2>
+      <div class="chart-sub">Post-acquisition focus on convergence; fiber is the strategic anchor</div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">Frontier acquired Jan 20, 2026 ($20B)</div><div class="item-detail">30M+ fiber passings across 31 states + DC. 16.3M combined FWA and fiber broadband connections. $1B/yr synergies expected by 2028.</div></div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">Fiber build: 2M+ passings in 2026; target 40-50M long-term</div><div class="item-detail">Eaton Fiber partnership for markets outside current footprint. Verizon handles sales/marketing; Eaton builds/maintains network.</div></div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">C-Band: 90% complete, finishing in 2026</div><div class="item-detail">Covers 300M people. Completion of C-band deployment expected by year-end 2026. CA: 250 new macro sites required as merger condition.</div></div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">Cost transformation: $5B opex savings target for 2026</div><div class="item-detail">New CEO Dan Schulman rationalizing non-core spending. FCF growth target: +7% to $21.5B+.</div></div>
+    </div>
+    <div class="chart-card">
+      <h2>T-Mobile -- Broadband + Rural Expansion</h2>
+      <div class="chart-sub">Lowest CapEx of the three, but highest capital efficiency; rural macro push via BEAD</div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">6,000 new macro sites proposed (~$8B via BEAD)</div><div class="item-detail">CTO John Saw: could extend 5G to 99% of Americans. 3M+ currently lack 4G access. Would leave $13B+ of BEAD unspent.</div></div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">Broadband: 12M customers by 2028 (from ~6M today)</div><div class="item-detail">5G FWA waitlist exceeds 1M. Scaling "hyper-local" go-to-market playbook. SA network covers 300M Americans.</div></div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">Fiber JVs: Lumos ($1.45B) + potentially Uniti Group</div><div class="item-detail">Target 12-15M fiber households by 2030. Expected ~20% IRR from fiber JVs. In running to acquire Uniti's 138K route miles.</div></div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">UScellular: Wireless ops + spectrum acquired (2025)</div><div class="item-detail">4,100 UScellular employees laid off as operations transfer. AT&T and Verizon separately bought $1B+ each of UScellular spectrum.</div></div>
+    </div>
+  </div>
 </div>
 
-<div class="footer"><p>TCE Telecom Intelligence | Data compiled March 2026 | Sources: WIA By The Numbers 2025, Deloitte TMT Outlook 2026, Mordor Intelligence, NTIA BEAD Dashboard, Wireless Estimator, Light Reading, Inside Towers</p></div>
+<!-- ========== BEAD TRACKER ========== -->
+<div class="tab-panel" id="panel-bead">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Total BEAD Funding</div><div class="kpi-value" style="color:var(--accent)">$42.45B</div><div class="kpi-footer"><span class="kpi-sub">Largest broadband program in US history</span></div></div>
+    <div class="kpi"><div class="kpi-label">Awards Signed</div><div class="kpi-value" style="color:var(--green)">38 of 56</div><div class="kpi-footer"><span class="kpi-sub">States/territories</span></div></div>
+    <div class="kpi"><div class="kpi-label">States $1B+</div><div class="kpi-value" style="color:var(--purple)">19</div><div class="kpi-footer"><span class="kpi-sub">Of 56 total allocations</span></div></div>
+    <div class="kpi"><div class="kpi-label">Savings Realized</div><div class="kpi-value" style="color:var(--amber)">$21B</div><div class="kpi-footer"><span class="kpi-sub">"Benefit of the Bargain" reforms</span></div></div>
+    <div class="kpi"><div class="kpi-label">Construction Starts</div><div class="kpi-value" style="color:var(--green)">Summer 2026</div><div class="kpi-footer"><span class="kpi-sub">First BEAD-funded projects</span></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card">
+      <h2>Top 15 State Allocations ($M)</h2>
+      <div class="chart-sub">NTIA allocation formula prioritizes unserved/underserved locations. 19 states received $1B+ (NTIA, StateScoop)</div>
+      <div class="chart-wrap" style="height:380px"><canvas id="chartBeadStates"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2>Program Timeline & Status</h2>
+      <div class="chart-sub">Major construction expected 2026-2030; program closeout after. Most visible community impact by 2027-2028.</div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">Phase 1: Planning & Proposals (2022-2024)</div><div class="item-detail">5-Year Action Plans, Initial Proposals, challenge processes. All 56 entities submitted. 53 NTIA-approved.</div></div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">Phase 2: Subgrantee Selection (2024-2026) -- ACTIVE</div><div class="item-detail">States running competitive grant rounds. June 2025 BEAD Restructuring shifted to "Benefit of the Bargain" tech-neutral approach. 50 NIST-approved, 38 signed.</div></div>
+      <div class="item-card" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.15)"><div class="item-label" style="color:var(--amber)">Phase 3: Construction (2026-2030) -- STARTING</div><div class="item-detail">Texas expects Summer 2026 groundbreaking. Wisconsin: Spring 2026. Louisiana was first approved but reset by restructuring. Major build 2026-2030.</div></div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">Key Policy Shift: Technology Neutrality</div><div class="item-detail">June 2025 restructuring removed fiber preference, opened satellite/FW eligibility. Starlink allocation could grow from $4.1B to $10-20B. States rescinded prior awards for BOB rounds.</div></div>
+      <div class="item-card" style="background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15)"><div class="item-label" style="color:var(--red)">Risk: Deployment Delays & Workforce</div><div class="item-detail">BABA compliance complexity, environmental reviews, permitting. 58K new broadband workers needed by 2032; 178K total shortfall. Only 10-15% of telecom workers travel >200mi for work.</div></div>
+      <div style="margin-top:12px">
+        <div class="insight" style="background:linear-gradient(135deg,rgba(16,185,129,.05),transparent);border:1px solid rgba(16,185,129,.2)">
+          <div class="insight-title" style="color:var(--green)">&#9670; State-Level Highlights</div>
+          <p><strong>Texas:</strong> $3.3B, 22 awardees, 240K+ locations, $1.2B in grants awarded, construction Summer 2026. <strong>Louisiana:</strong> $1.3B, 140K locations, 80% fiber, first approved but reset. <strong>California:</strong> $1.9B, still in subgrantee selection (CPUC). <strong>North Carolina:</strong> $1.5B, approved Dec 2025, contracting in 2026. <strong>Wisconsin:</strong> Approved Dec 2025, construction Spring 2026. <strong>Mississippi:</strong> $1.2B, 86% fiber, 97K locations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONSOLIDATION TRACKER ========== -->
+<div class="tab-panel" id="panel-consolidation">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Telecom M&A (2024-25)</div><div class="kpi-value" style="color:var(--accent)">$88B+</div><div class="kpi-footer"><span class="kpi-sub">Announced deal value</span></div></div>
+    <div class="kpi"><div class="kpi-label">Tower Transactions Q1 2025</div><div class="kpi-value" style="color:var(--green)">559</div><div class="kpi-footer"><span class="kpi-sub">Ownership changes (Inside Towers)</span></div></div>
+    <div class="kpi"><div class="kpi-label">Wireless Workforce Lost</div><div class="kpi-value" style="color:var(--red)">-26,400</div><div class="kpi-footer"><span class="kpi-sub">Jobs in 2025 (WIA)</span></div></div>
+    <div class="kpi"><div class="kpi-label">Carrier Employees Lost</div><div class="kpi-value" style="color:var(--red)">-141,600</div><div class="kpi-footer"><span class="kpi-sub">Big 8 carriers, 2019-2024</span></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card">
+      <h2>Major Infrastructure Deals (2024-2026)</h2>
+      <div class="chart-sub">Tower, fiber, and spectrum transactions reshaping the competitive landscape (SEC filings, press releases)</div>
+      <div class="item-card" style="background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15)"><div class="item-label" style="color:var(--red)">SBA Communications exploring sale (April 2026)</div><div class="item-detail">Working with financial advisors. Blackstone, KKR, Brookfield rumored buyers. Shares jumped 19%. Distressed Altman Z-Score. Excluded all EchoStar revenue from 2026 guidance.</div></div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">Crown Castle: Sold fiber assets for $8.5B (March 2025)</div><div class="item-detail">Repositioned as pure-play tower REIT. Activist investor Elliott drove the restructuring. Interim CEO transition.</div></div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">SoftBank acquired DigitalBridge ($4B, Dec 2025)</div><div class="item-detail">Signaled that aggressive tech investors view towers as "AI-ready" digital assets. Sets stage for new wave of infra consolidation.</div></div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">Symphony + CTI Towers merger (Jan 2025)</div><div class="item-detail">Created $1B+ unified platform. 1,800+ owned/managed towers. Serves AT&T, Verizon, T-Mobile, EchoStar/Boost.</div></div>
+      <div class="item-card" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.15)"><div class="item-label" style="color:var(--amber)">Vertical Bridge: $1.94B securitization (Feb 2026)</div><div class="item-detail">Largest single-tranche tower securitization in industry history. Nation's largest privately held cell tower company.</div></div>
+      <div class="item-card" style="background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.15)"><div class="item-label" style="color:var(--purple)">Connected Infra Group: $1B commitment (TPG Peppertree)</div><div class="item-detail">Founded by Bernard Borghei. Focus on owning/operating telecom real estate. New platform targeting tower acquisitions.</div></div>
+    </div>
+    <div class="chart-card">
+      <h2>Contractor & Construction Consolidation</h2>
+      <div class="chart-sub">Turf model elimination, NWSA requirements, and margin pressure are accelerating consolidation among wireless contractors</div>
+      <div class="item-card" style="background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)"><div class="item-label" style="color:var(--accent)">Dycom: Acquired Power Solutions for $1.95B (Dec 2025)</div><div class="item-detail">Data center electrical contractor. Record $5.5B annual revenue, $9.5B backlog. Also acquired Ansco/Overland wireless group ($150M). Expanding beyond telecom into AI/data center.</div></div>
+      <div class="item-card" style="background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.15)"><div class="item-label" style="color:var(--green)">MasTec: Acquired NV2A (Dec 2025)</div><div class="item-detail">$13.8B trailing revenue, 38K employees. Continuing aggressive acquisition strategy across telecom and infrastructure.</div></div>
+      <div class="item-card" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.15)"><div class="item-label" style="color:var(--amber)">Atlas Holdings: Acquired QualTek (2024)</div><div class="item-detail">Former large turnkey contractor, emerged from bankruptcy. MasTec and Dycom had also considered QualTek as target. Atlas positioning as major infra contractor.</div></div>
+      <div class="item-card" style="background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15)"><div class="item-label" style="color:var(--red)">Small contractor closures accelerating</div><div class="item-detail">NATE CEO (Jan 2025): carriers' "take-it-or-leave-it matrix pricing" is "causing frustration" -- "proud businesses are faced with closing due to a carrier climate that unreasonably interferes with profitability."</div></div>
+      <div class="item-card" style="background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15)"><div class="item-label" style="color:var(--red)">CommScope: Sold OWN + DAS to Amphenol ($2.1B, 2025)</div><div class="item-detail">Outdoor Wireless Networks and Distributed Antenna Systems units divested. Equipment consolidation paralleling contractor consolidation.</div></div>
+      <div style="margin-top:12px">
+        <div class="insight" style="background:linear-gradient(135deg,rgba(245,158,11,.05),transparent);border:1px solid rgba(245,158,11,.2)">
+          <div class="insight-title" style="color:var(--amber)">&#9888; Structural Forces Driving Consolidation</div>
+          <p>AT&T turf model elimination (June 2026) requires single-GC + one sub tier only. 50% NWSA certification mandates raise barriers. Net-90 payment terms squeeze working capital. Matrix pricing flat since ~2020. The combination favors larger, well-capitalized, certified firms and creates acquisition opportunities for companies with balance sheet strength.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="chart-card">
+      <h2>Carrier M&A Reshaping the Landscape</h2>
+      <div class="chart-sub">Carrier-level deals driving downstream contractor and infrastructure activity</div>
+      <div class="chart-wrap"><canvas id="chartDeals"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2>AT&T Headcount Decline (Fierce Network)</h2>
+      <div class="chart-sub">AT&T lost 106,810 employees from 2019-2024 -- largest among US carriers. Outsourcing and AI driving further reductions.</div>
+      <div class="chart-wrap"><canvas id="chartHeadcount"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FCC ASR + BEAD BIZDEV ========== -->
+<div class="tab-panel" id="panel-bizdev">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">ASR Filings 2026 YTD</div><div class="kpi-value" style="color:var(--accent)">26,189</div><div class="kpi-footer"><span class="kpi-sub">All application types (FCC)</span></div></div>
+    <div class="kpi"><div class="kpi-label">New Tower Filings 2025</div><div class="kpi-value" style="color:var(--green)">7,013</div><div class="kpi-footer"><span class="kpi-sub">NT registrations (FCC ASR)</span></div></div>
+    <div class="kpi"><div class="kpi-label">Modifications 2025-26</div><div class="kpi-value" style="color:var(--purple)">2,117</div><div class="kpi-footer"><span class="kpi-sub">MD+AM filings by state</span></div></div>
+    <div class="kpi"><div class="kpi-label">Ownership Changes</div><div class="kpi-value" style="color:var(--amber)">1,745</div><div class="kpi-footer"><span class="kpi-sub">OC filings 2025-2026</span></div></div>
+    <div class="kpi"><div class="kpi-label">CA BEAD Awards</div><div class="kpi-value" style="color:var(--pink)">$1.57B</div><div class="kpi-footer"><span class="kpi-sub">22 subgrantees (Brander Group)</span></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="chart-card">
+      <h2>FCC ASR: New Tower Filings by State (2025-2026)</h2>
+      <div class="chart-sub">NE+NT application types. Note: entity HQ states (MA=American Tower, FL=SBA) inflate; modification data better reflects physical build activity. Source: FCC ASR bulk data, week of April 5, 2026.</div>
+      <div class="chart-wrap" style="height:360px"><canvas id="chartASR"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2>FCC ASR: Tower Modifications by State (2025-2026)</h2>
+      <div class="chart-sub">MD+AM filings -- stronger indicator of actual physical tower work (upgrades, antenna swaps, capacity adds). Source: FCC ASR.</div>
+      <div class="chart-wrap" style="height:360px"><canvas id="chartMods"></canvas></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="chart-card">
+      <h2>Top Tower Entities: New Filings (2025-2026)</h2>
+      <div class="chart-sub">American Tower dominates with 4,049 filings. SBA subsidiaries combined = ~1,200+. Source: FCC ASR EN+RA tables.</div>
+      <div class="chart-wrap" style="height:320px"><canvas id="chartEntities"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2>BEAD Subgrantees: California ($1.57B)</h2>
+      <div class="chart-sub">22 provisional awardees. These ISPs will need construction partners for fiber, FWA, and satellite deployments. Source: Brander Group / CPUC, Jan 2026.</div>
+      <div class="chart-wrap" style="height:320px"><canvas id="chartBeadCA"></canvas></div>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="chart-card">
+      <h2>BEAD Subgrantees: Colorado ($397M)</h2>
+      <div class="chart-sub">25 awardees across 95K+ locations. Heavy fiber emphasis with satellite for remote areas. Source: Brander Group, Jan 2026.</div>
+      <div style="overflow-y:auto;max-height:340px">
+        <table style="width:100%;border-collapse:collapse;font-size:11px">
+          <tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:6px;color:var(--muted)">Company</th><th style="text-align:right;padding:6px;color:var(--muted)">Award</th><th style="text-align:left;padding:6px;color:var(--muted)">Tech</th><th style="text-align:right;padding:6px;color:var(--muted)">Locs</th></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Maverix Broadband</td><td style="text-align:right;padding:5px;color:var(--accent)">$103.0M</td><td style="padding:5px;color:var(--muted)">Fiber</td><td style="text-align:right;padding:5px;color:var(--muted)">10,232</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Inventive Wireless of NE</td><td style="text-align:right;padding:5px;color:var(--accent)">$64.6M</td><td style="padding:5px;color:var(--muted)">Fiber</td><td style="text-align:right;padding:5px;color:var(--muted)">5,836</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Highline</td><td style="text-align:right;padding:5px;color:var(--accent)">$40.6M</td><td style="padding:5px;color:var(--muted)">Fiber</td><td style="text-align:right;padding:5px;color:var(--muted)">8,252</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Conexon Connect</td><td style="text-align:right;padding:5px;color:var(--accent)">$29.0M</td><td style="padding:5px;color:var(--muted)">Fiber</td><td style="text-align:right;padding:5px;color:var(--muted)">4,334</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Clear Networx</td><td style="text-align:right;padding:5px;color:var(--accent)">$25.8M</td><td style="padding:5px;color:var(--muted)">Fiber</td><td style="text-align:right;padding:5px;color:var(--muted)">2,022</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Amazon Kuiper</td><td style="text-align:right;padding:5px;color:var(--amber)">$25.4M</td><td style="padding:5px;color:var(--muted)">LEO Sat</td><td style="text-align:right;padding:5px;color:var(--muted)">42,252</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Visionary Communications</td><td style="text-align:right;padding:5px;color:var(--accent)">$17.4M</td><td style="padding:5px;color:var(--muted)">Fiber</td><td style="text-align:right;padding:5px;color:var(--muted)">4,307</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Southern Ute Indian Tribe</td><td style="text-align:right;padding:5px;color:var(--accent)">$16.8M</td><td style="padding:5px;color:var(--muted)">Fiber/FWA</td><td style="text-align:right;padding:5px;color:var(--muted)">1,395</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Starlink</td><td style="text-align:right;padding:5px;color:var(--amber)">$9.2M</td><td style="padding:5px;color:var(--muted)">LEO Sat</td><td style="text-align:right;padding:5px;color:var(--muted)">5,400</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Comcast</td><td style="text-align:right;padding:5px;color:var(--accent)">$6.4M</td><td style="padding:5px;color:var(--muted)">Fiber</td><td style="text-align:right;padding:5px;color:var(--muted)">1,047</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h2>BEAD Subgrantees: Texas ($3.3B)</h2>
+      <div class="chart-sub">22 awardees, 240K+ locations, $1.2B in grants. Largest state allocation. Construction expected Summer 2026. Source: TX Comptroller / Brander Group.</div>
+      <div style="overflow-y:auto;max-height:340px">
+        <table style="width:100%;border-collapse:collapse;font-size:11px">
+          <tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:6px;color:var(--muted)">Top BEAD States</th><th style="text-align:right;padding:6px;color:var(--muted)">Allocation</th><th style="text-align:left;padding:6px;color:var(--muted)">Status</th><th style="text-align:left;padding:6px;color:var(--muted)">Construction</th></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Texas</td><td style="text-align:right;padding:5px;color:var(--accent)">$3.31B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">Summer 2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">California</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.86B</td><td style="padding:5px;color:var(--amber)">CPUC selecting</td><td style="padding:5px;color:var(--muted)">Late 2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Missouri</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.74B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Michigan</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.56B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">North Carolina</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.53B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Alabama</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.40B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Virginia</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.38B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Louisiana</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.36B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Georgia</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.31B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Washington</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.23B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026-2027</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Mississippi</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.21B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Colorado</td><td style="text-align:right;padding:5px;color:var(--accent)">$827M</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Arizona</td><td style="text-align:right;padding:5px;color:var(--accent)">$993M</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Arkansas</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.02B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:5px;color:var(--text)">Alaska</td><td style="text-align:right;padding:5px;color:var(--accent)">$1.02B</td><td style="padding:5px;color:var(--green)">Signed</td><td style="padding:5px;color:var(--muted)">2026-2027</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="grid-3" style="margin-top:16px">
+    <div class="insight" style="background:linear-gradient(135deg,rgba(34,211,238,.05),transparent);border:1px solid rgba(34,211,238,.2)">
+      <div class="insight-title" style="color:var(--accent)">&#9670; FCC ASR: What the Data Shows</div>
+      <p>26,189 ASR filings in 2026 YTD (through April 5). Administrative updates (AU) dominate, but NT (new tower notifications) and MD (modifications) indicate physical build activity. FL, GA, NC, TX, and PA lead in modification activity -- these are states where tower upgrades are actively happening.</p>
+    </div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(16,185,129,.05),transparent);border:1px solid rgba(16,185,129,.2)">
+      <div class="insight-title" style="color:var(--green)">&#10148; BEAD Bizdev Targets</div>
+      <p>The 22 California BEAD subgrantees (Comcast, AT&T, Frontier, Stimulus Technologies, Astound, etc.) have $1.57B in awarded funding and will need construction partners for fiber deployment starting late 2026. Colorado's 25 awardees represent another $397M in construction opportunity.</p>
+    </div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(245,158,11,.05),transparent);border:1px solid rgba(245,158,11,.2)">
+      <div class="insight-title" style="color:var(--amber)">&#9888; Ownership Churn = Opportunity</div>
+      <p>1,745 ownership change filings in 2025-2026. K2 Towers (152), TVT III (147), Diamond Towers (107), and GTC Uno (103) are actively acquiring. New tower owners often need crews for deferred maintenance, upgrades, and compliance work.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BIZDEV TARGETS ========== -->
+<div class="tab-panel" id="panel-targets">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Tier 1 Targets</div><div class="kpi-value" style="color:var(--accent)">10</div><div class="kpi-footer"><span class="kpi-sub">BEAD subgrantees, $50M+</span></div></div>
+    <div class="kpi"><div class="kpi-label">Tier 1 BEAD Value</div><div class="kpi-value" style="color:var(--green)">$1.63B</div><div class="kpi-footer"><span class="kpi-sub">Combined award pool</span></div></div>
+    <div class="kpi"><div class="kpi-label">Tier 2 Targets</div><div class="kpi-value" style="color:var(--purple)">6</div><div class="kpi-footer"><span class="kpi-sub">Active tower builders (FCC ASR)</span></div></div>
+    <div class="kpi"><div class="kpi-label">Tier 3 Targets</div><div class="kpi-value" style="color:var(--amber)">5</div><div class="kpi-footer"><span class="kpi-sub">Tower acquirers (OC filings)</span></div></div>
+  </div>
+
+  <!-- TIER 1 -->
+  <div class="chart-card" style="margin-bottom:16px">
+    <h2>Tier 1: BEAD Subgrantees -- High Award, Low In-House Construction Capacity</h2>
+    <div class="chart-sub">These companies won $50M+ in BEAD funding but are NOT large incumbents with established crew bases. They will need construction subcontractors. Ranked by total award value. Sources: Brander Group BEAD Tracker (Jan 2026), Telecompetitor, CPUC, TX Comptroller.</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px">
+        <tr style="border-bottom:2px solid var(--border)">
+          <th style="text-align:left;padding:8px 10px;color:var(--accent);font-family:'Space Grotesk',sans-serif">#</th>
+          <th style="text-align:left;padding:8px 10px;color:var(--accent);font-family:'Space Grotesk',sans-serif">Company</th>
+          <th style="text-align:right;padding:8px 10px;color:var(--accent);font-family:'Space Grotesk',sans-serif">Total BEAD</th>
+          <th style="text-align:left;padding:8px 10px;color:var(--accent);font-family:'Space Grotesk',sans-serif">States</th>
+          <th style="text-align:left;padding:8px 10px;color:var(--accent);font-family:'Space Grotesk',sans-serif">Why Target</th>
+          <th style="text-align:left;padding:8px 10px;color:var(--accent);font-family:'Space Grotesk',sans-serif">Timeline</th>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233;background:rgba(34,211,238,.03)">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">1</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Nexstream</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$407M</td>
+          <td style="padding:8px 10px;color:var(--muted)">TX (32K+ locs)</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Largest single BEAD subgrantee in the largest BEAD state. Massive fiber build ahead.</td>
+          <td style="padding:8px 10px;color:var(--green);font-weight:600;font-size:10.5px">Summer 2026</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">2</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Stimulus Technologies</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$384M+</td>
+          <td style="padding:8px 10px;color:var(--muted)">OR, CA, MS, NV</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">IT services company (30-person HQ) building fiber across 5 states. OR: $188M, CA: $119M. Cannot execute at this scale without major construction subs.</td>
+          <td style="padding:8px 10px;color:var(--green);font-weight:600;font-size:10.5px">Active now (OR)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233;background:rgba(34,211,238,.03)">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">3</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Astound Broadband</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$226M</td>
+          <td style="padding:8px 10px;color:var(--muted)">CA ($114M), OR ($112M)</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Regional cable company scaling into fiber BEAD builds across two West Coast states.</td>
+          <td style="padding:8px 10px;color:var(--amber);font-weight:600;font-size:10.5px">2026-2027</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">4</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Lyte Fiber</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$142M</td>
+          <td style="padding:8px 10px;color:var(--muted)">TX (7 counties)</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Mid-tier Texas fiber builder with concentrated rural county buildout.</td>
+          <td style="padding:8px 10px;color:var(--green);font-weight:600;font-size:10.5px">Summer 2026</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233;background:rgba(34,211,238,.03)">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">5</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Hometown Internet</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$136M</td>
+          <td style="padding:8px 10px;color:var(--muted)">AR ($88M), MS ($47M)</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Rural fiber across two states, 28,000 locations combined.</td>
+          <td style="padding:8px 10px;color:var(--amber);font-weight:600;font-size:10.5px">2026</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">6</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Maverix Broadband</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$103M</td>
+          <td style="padding:8px 10px;color:var(--muted)">CO (10,232 locs)</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">CO-based fiber ISP. Uses microtrenching. Kiowa-Elizabeth project under active construction. Expanding into Garfield County.</td>
+          <td style="padding:8px 10px;color:var(--green);font-weight:600;font-size:10.5px">Active now</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233;background:rgba(34,211,238,.03)">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">7</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Premier Holdings</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$78M</td>
+          <td style="padding:8px 10px;color:var(--muted)">AL ($57M), AR ($21M)</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Multi-state fiber builds across Southeast.</td>
+          <td style="padding:8px 10px;color:var(--amber);font-weight:600;font-size:10.5px">2026</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">8</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Inventive Wireless</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$65M</td>
+          <td style="padding:8px 10px;color:var(--muted)">CO (5,836 locs)</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Rural Colorado fiber buildout.</td>
+          <td style="padding:8px 10px;color:var(--amber);font-weight:600;font-size:10.5px">2026</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233;background:rgba(34,211,238,.03)">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">9</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">SP Broadband</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$58M</td>
+          <td style="padding:8px 10px;color:var(--muted)">AL</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Alabama fiber deployment.</td>
+          <td style="padding:8px 10px;color:var(--amber);font-weight:600;font-size:10.5px">2026</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233">
+          <td style="padding:8px 10px;color:var(--accent);font-weight:700">10</td>
+          <td style="padding:8px 10px;color:var(--text);font-weight:600">Conexon Connect</td>
+          <td style="text-align:right;padding:8px 10px;color:var(--accent);font-weight:700">$49M+</td>
+          <td style="padding:8px 10px;color:var(--muted)">CO ($29M), GA ($20M), +</td>
+          <td style="padding:8px 10px;color:var(--muted);font-size:10.5px">Rural fiber specialist deploying through electric co-ops. Multi-state. Proven model but needs local subs.</td>
+          <td style="padding:8px 10px;color:var(--amber);font-weight:600;font-size:10.5px">2026-2027</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <!-- TIER 2 -->
+    <div class="chart-card">
+      <h2>Tier 2: Active Tower Builders (FCC ASR 2025-2026)</h2>
+      <div class="chart-sub">Highest combined new filings + modification activity among private tower companies. Need crews for new builds, antenna swaps, capacity upgrades. Source: FCC ASR bulk data, April 5, 2026.</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px">
+        <tr style="border-bottom:2px solid var(--border)">
+          <th style="text-align:left;padding:7px 10px;color:var(--purple);font-family:'Space Grotesk',sans-serif">Company</th>
+          <th style="text-align:right;padding:7px 10px;color:var(--purple);font-family:'Space Grotesk',sans-serif">New</th>
+          <th style="text-align:right;padding:7px 10px;color:var(--purple);font-family:'Space Grotesk',sans-serif">Mods</th>
+          <th style="text-align:right;padding:7px 10px;color:var(--purple);font-family:'Space Grotesk',sans-serif">Total</th>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">Tillman Infrastructure</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">375</td><td style="text-align:right;padding:6px 10px;color:var(--amber)">214</td><td style="text-align:right;padding:6px 10px;color:var(--text);font-weight:700">589</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">TowerCo V Holdings</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">113</td><td style="text-align:right;padding:6px 10px;color:var(--amber)">59</td><td style="text-align:right;padding:6px 10px;color:var(--text);font-weight:700">172</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">CitySwitch II</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">87</td><td style="text-align:right;padding:6px 10px;color:var(--amber)">69</td><td style="text-align:right;padding:6px 10px;color:var(--text);font-weight:700">156</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">Harmoni Towers (combined)</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">125</td><td style="text-align:right;padding:6px 10px;color:var(--amber)">40</td><td style="text-align:right;padding:6px 10px;color:var(--text);font-weight:700">165</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">TowerNorth Development</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">68</td><td style="text-align:right;padding:6px 10px;color:var(--amber)">53</td><td style="text-align:right;padding:6px 10px;color:var(--text);font-weight:700">121</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">Tarpon Towers II</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">84</td><td style="text-align:right;padding:6px 10px;color:var(--amber)">--</td><td style="text-align:right;padding:6px 10px;color:var(--text);font-weight:700">84</td></tr>
+      </table>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="chart-card">
+      <h2>Tier 3: Tower Acquirers (FCC ASR Ownership Changes)</h2>
+      <div class="chart-sub">New tower owners typically need site audits, deferred maintenance, compliance upgrades, and tenant-add work. Source: FCC ASR OC filings, 2025-2026.</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px">
+        <tr style="border-bottom:2px solid var(--border)">
+          <th style="text-align:left;padding:7px 10px;color:var(--amber);font-family:'Space Grotesk',sans-serif">Company</th>
+          <th style="text-align:right;padding:7px 10px;color:var(--amber);font-family:'Space Grotesk',sans-serif">OC Filings</th>
+          <th style="text-align:left;padding:7px 10px;color:var(--amber);font-family:'Space Grotesk',sans-serif">Signal</th>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">K2 Towers III</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">152</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">Most active acquirer in dataset</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">TVT III</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">147</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">Concentrated acquisition activity</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">Diamond Towers IV</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">107</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">Active portfolio builder</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">GTC Uno</td><td style="text-align:right;padding:6px 10px;color:var(--accent)">103</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">Aggressive buying pace</td></tr>
+        <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">Connected Infra Group</td><td style="text-align:right;padding:6px 10px;color:var(--amber)">New</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">$1B TPG Peppertree commitment. Bernard Borghei. New acquisition platform.</td></tr>
+      </table>
+      <div style="margin-top:16px">
+        <h2 style="font-size:16px">Tier 4: Carrier Build Programs</h2>
+        <div class="chart-sub">Near-term carrier activity with specific construction signals.</div>
+        <table style="width:100%;border-collapse:collapse;font-size:11.5px">
+          <tr style="border-bottom:2px solid var(--border)">
+            <th style="text-align:left;padding:7px 10px;color:var(--green);font-family:'Space Grotesk',sans-serif">Carrier</th>
+            <th style="text-align:left;padding:7px 10px;color:var(--green);font-family:'Space Grotesk',sans-serif">Opportunity</th>
+            <th style="text-align:left;padding:7px 10px;color:var(--green);font-family:'Space Grotesk',sans-serif">Timeline</th>
+          </tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">AT&T</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">Open RAN modernization (nationwide simultaneous)</td><td style="padding:6px 10px;color:var(--green);font-size:10.5px">Now - end 2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">AT&T</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">8M new fiber locations in 2026; hiring thousands of techs</td><td style="padding:6px 10px;color:var(--green);font-size:10.5px">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">Verizon</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">250 new macro sites in CA (Frontier merger condition)</td><td style="padding:6px 10px;color:var(--amber);font-size:10.5px">7yr from Jan 2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">Verizon</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">2M+ fiber passings (post-Frontier integration)</td><td style="padding:6px 10px;color:var(--green);font-size:10.5px">2026</td></tr>
+          <tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 10px;color:var(--text);font-weight:600">T-Mobile</td><td style="padding:6px 10px;color:var(--muted);font-size:10.5px">6,000 macro sites via BEAD ($8B ask)</td><td style="padding:6px 10px;color:var(--amber);font-size:10.5px">If approved: 1,200/yr x 5yr</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-top:16px">
+    <div class="insight" style="background:linear-gradient(135deg,rgba(34,211,238,.05),transparent);border:1px solid rgba(34,211,238,.2)">
+      <div class="insight-title" style="color:var(--accent)">&#9670; #1 Call: Stimulus Technologies</div>
+      <p>$384M in BEAD across 5 states on a 30-person IT company base. Actively building in Klamath County OR (groundbreaking announced) and Inyo County CA ($21M CPUC grant). The math doesn't work without major construction partnerships. HQ: Las Vegas.</p>
+    </div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(16,185,129,.05),transparent);border:1px solid rgba(16,185,129,.2)">
+      <div class="insight-title" style="color:var(--green)">&#10148; #2 Call: Nexstream (TX)</div>
+      <p>$407M -- single largest BEAD subgrantee in the single largest BEAD state. 32,000+ locations across rural Texas. Construction starts Summer 2026. This is a massive fiber build that will require significant sub capacity.</p>
+    </div>
+    <div class="insight" style="background:linear-gradient(135deg,rgba(167,139,250,.05),transparent);border:1px solid rgba(167,139,250,.2)">
+      <div class="insight-title" style="color:var(--purple)">&#9888; #3 Call: Tillman Infrastructure</div>
+      <p>589 combined FCC ASR filings (375 new + 214 mods) -- most active private tower company in the US right now. They are building and upgrading at scale and need field crews across multiple states.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer"><p>TCE Telecom Intelligence | Data compiled April 2026 | Sources: FCC ASR Bulk Data (April 5, 2026), NTIA BEAD Dashboard, Brander Group BEAD Tracker, WIA By The Numbers 2025, Deloitte TMT Outlook 2026, Mordor Intelligence, Wireless Estimator, Light Reading, Inside Towers, SEC Filings, Fierce Network, Pew Charitable Trusts, FBA/PCCA, TX Comptroller, CPUC</p></div>
 
 <script>
 // TAB SWITCHING
@@ -339,6 +742,113 @@ function initCharts(tab) {
           ]
         },
         options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 100, ticks: { stepSize: 25, color: '#64748b', backdropColor: 'transparent' }, grid: { color: '#1e293b' }, pointLabels: { color: '#94a3b8', font: { size: 11 } } } } }
+      });
+    }
+  }
+  if (tab === 'pipeline') {
+    if (!charts.pipeline) {
+      charts.pipeline = new Chart(document.getElementById('chartPipeline'), {
+        type: 'bar',
+        data: {
+          labels: ['AT&T','Verizon','T-Mobile'],
+          datasets: [
+            { label: '2025 CapEx ($B)', data: [22.0,17.0,9.0], backgroundColor: 'rgba(148,163,184,.4)', borderColor: '#94a3b8', borderWidth: 1 },
+            { label: '2026 CapEx ($B)', data: [23.5,16.25,10.0], backgroundColor: ['rgba(34,211,238,.7)','rgba(16,185,129,.7)','rgba(167,139,250,.7)'], borderColor: ['#22d3ee','#10b981','#a78bfa'], borderWidth: 1 }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', scales: { x: { beginAtZero: true, grid: { color: '#1e293b' } }, y: { grid: { color: '#1e293b' } } } }
+      });
+    }
+  }
+  if (tab === 'bead') {
+    if (!charts.beadStates) {
+      charts.beadStates = new Chart(document.getElementById('chartBeadStates'), {
+        type: 'bar',
+        data: {
+          labels: ['Texas','California','Missouri','Michigan','N. Carolina','Alabama','Virginia','Georgia','Louisiana','Washington','Mississippi','Minnesota','Oklahoma','W. Virginia','Arkansas'],
+          datasets: [{ label: 'Allocation ($M)', data: [3313,1864,1740,1559,1533,1401,1382,1310,1355,1228,1207,1104,1085,1200,1024],
+            backgroundColor: ['#22d3ee','#22d3ee','#10b981','#10b981','#10b981','#a78bfa','#a78bfa','#a78bfa','#f59e0b','#f59e0b','#f59e0b','#ec4899','#ec4899','#ec4899','#ec4899'],
+            borderColor: '#111827', borderWidth: 1 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, grid: { color: '#1e293b' }, ticks: { callback: function(v) { return '$' + v.toLocaleString() + 'M'; } } }, y: { grid: { color: '#1e293b' }, ticks: { font: { size: 10 } } } } }
+      });
+    }
+  }
+  if (tab === 'consolidation') {
+    if (!charts.deals) {
+      charts.deals = new Chart(document.getElementById('chartDeals'), {
+        type: 'bar',
+        data: {
+          labels: ['VZ/Frontier','AT&T/Lumen','T-Mobile/\nUScellular','Crown Castle\nFiber Sale','SoftBank/\nDigitalBridge','Dycom/\nPower Sol.','CommScope/\nAmphenol'],
+          datasets: [{ label: 'Deal Value ($B)', data: [20.0,5.75,4.4,8.5,4.0,1.95,2.1],
+            backgroundColor: ['#10b981','#22d3ee','#a78bfa','#f59e0b','#ec4899','#22d3ee','#f59e0b'],
+            borderColor: '#111827', borderWidth: 1 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#1e293b' }, ticks: { callback: function(v) { return '$' + v + 'B'; } } }, x: { grid: { color: '#1e293b' }, ticks: { font: { size: 9 }, maxRotation: 0 } } } }
+      });
+    }
+    if (!charts.headcount) {
+      charts.headcount = new Chart(document.getElementById('chartHeadcount'), {
+        type: 'line',
+        data: {
+          labels: ['2019','2020','2021','2022','2023','2024'],
+          datasets: [
+            { label: 'AT&T', data: [247.8,230.0,202.6,175.0,150.0,141.0], borderColor: '#22d3ee', backgroundColor: 'rgba(34,211,238,.08)', fill: true, tension: 0.3, pointRadius: 4, pointBackgroundColor: '#22d3ee', borderWidth: 2 },
+            { label: 'Verizon', data: [135.0,132.2,118.4,117.1,115.0,100.0], borderColor: '#10b981', backgroundColor: 'transparent', tension: 0.3, pointRadius: 4, pointBackgroundColor: '#10b981', borderWidth: 2 },
+            { label: 'T-Mobile', data: [53.0,53.0,71.0,71.0,69.0,69.5], borderColor: '#a78bfa', backgroundColor: 'transparent', tension: 0.3, pointRadius: 4, pointBackgroundColor: '#a78bfa', borderWidth: 2 }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { title: { display: true, text: 'Thousands', color: '#64748b' }, grid: { color: '#1e293b' } }, x: { grid: { color: '#1e293b' } } } }
+      });
+    }
+  }
+  if (tab === 'bizdev') {
+    if (!charts.asr) {
+      charts.asr = new Chart(document.getElementById('chartASR'), {
+        type: 'bar',
+        data: {
+          labels: ['FL','GA','NC','NY','TX','PA','MN','IN','CA','OK','OH','VA','TN','CO','IL','WI','WA','AZ'],
+          datasets: [
+            { label: '2025', data: [1381,548,390,307,95,87,69,63,67,81,67,52,61,51,33,39,25,30], backgroundColor: 'rgba(34,211,238,.5)' },
+            { label: '2026 YTD', data: [618,147,102,109,63,48,28,30,26,8,17,30,12,14,22,4,17,4], backgroundColor: 'rgba(16,185,129,.7)' }
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { font: { size: 10 } } } }, scales: { x: { stacked: true, grid: { color: '#1e293b' }, ticks: { font: { size: 9 } } }, y: { stacked: true, grid: { color: '#1e293b' }, title: { display: true, text: 'NE+NT Filings', color: '#64748b' } } } }
+      });
+    }
+    if (!charts.mods) {
+      charts.mods = new Chart(document.getElementById('chartMods'), {
+        type: 'bar',
+        data: {
+          labels: ['FL','GA','NY','NC','PA','TX','MA','OK','CA','OH','DC','IN','CO','VA','ME','WI','WA','AZ','MO','IL'],
+          datasets: [{ label: 'Modifications (MD+AM)', data: [392,311,279,264,213,132,77,71,63,56,52,48,46,45,42,40,37,35,34,33],
+            backgroundColor: ['#a78bfa','#a78bfa','#a78bfa','#a78bfa','#a78bfa','#f59e0b','#f59e0b','#f59e0b','#f59e0b','#f59e0b','#22d3ee','#22d3ee','#22d3ee','#22d3ee','#22d3ee','#10b981','#10b981','#10b981','#10b981','#10b981'],
+            borderColor: '#111827', borderWidth: 1 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#1e293b' }, ticks: { font: { size: 9 } } }, y: { grid: { color: '#1e293b' } } } }
+      });
+    }
+    if (!charts.entities) {
+      charts.entities = new Chart(document.getElementById('chartEntities'), {
+        type: 'bar',
+        data: {
+          labels: ['American\nTowers','Tillman\nInfra','SBA\nTowers II','Cellco\n(Verizon)','SBA\nStructures','SBA\nTowers','The\nTowers','SBA 2012\nTC Assets','TowerCo V','CitySwitch\nII','Tarpon\nTowers II'],
+          datasets: [{ label: 'New Filings', data: [4049,375,262,229,180,167,134,132,113,87,84],
+            backgroundColor: '#22d3ee', borderColor: '#111827', borderWidth: 1 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#1e293b' } }, y: { grid: { color: '#1e293b' }, ticks: { font: { size: 9 } } } } }
+      });
+    }
+    if (!charts.beadCA) {
+      charts.beadCA = new Chart(document.getElementById('chartBeadCA'), {
+        type: 'bar',
+        data: {
+          labels: ['Comcast','AT&T','Frontier','Stimulus\nTech','Astound','Amazon\nKuiper','Wi-Fiber\nNorCal','Starlink','INTUS','Resound\nNetworks'],
+          datasets: [{ label: 'Award ($M)', data: [399.7,331.3,248.7,119.0,113.9,101.0,64.1,63.1,50.4,34.4],
+            backgroundColor: ['#22d3ee','#22d3ee','#22d3ee','#10b981','#10b981','#f59e0b','#10b981','#f59e0b','#a78bfa','#a78bfa'],
+            borderColor: '#111827', borderWidth: 1 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#1e293b' }, ticks: { callback: function(v) { return '$' + v + 'M'; } } }, y: { grid: { color: '#1e293b' }, ticks: { font: { size: 9 } } } } }
       });
     }
   }
